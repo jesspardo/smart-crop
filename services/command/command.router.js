@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 const QueueService = require('../queue/queue.service');
-// const CommandErrors = require('../../commands/command.errors');
+const CommandErrors = require('../../commands/command.errors');
 
 const clientQueue = new QueueService();
 
@@ -17,7 +17,7 @@ const handlePost = (req, res) => {
     getHttpResponse(result, res);
   });
   job.on('failed', (error) => {
-    const httpResponse = { msg: error.message};
+    const httpResponse = CommandErrors.returnError(error);
     getHttpResponse(httpResponse, res);
   });
 };

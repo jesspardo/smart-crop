@@ -29,7 +29,6 @@ class CloudStorageClient {
       Bucket: this.bucket,
       Key: Key.replace('SMALLSIZE', 'LARGESIZE'),
     };
-    console.log('===> KEY of original Image', params);
     return this.S3.getObject(params).promise();
   }
 }
