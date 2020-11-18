@@ -7,7 +7,6 @@ const developmentEnvSchema = Joi.object().keys({
   CLOUD_STORAGE_REGION: Joi.required(),
   CLOUD_STORAGE_SECRET: Joi.required(),
   CLOUD_STORAGE_KEY: Joi.required(),
-  CC_QUEUE_NAME: Joi.required(),
   // CC_URL: Joi.required(),
   // HMACSHA256_SECRET: Joi.required(),
   // JWT_NO_TIMESTAMP: Joi.required(),
