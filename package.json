@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tensorflow/tfjs-core": "1.7.0",
     "@tensorflow/tfjs-node": "^1.7.0",
     "aws-sdk": "^2.429.0",
     "bee-queue": "1.2.2",
