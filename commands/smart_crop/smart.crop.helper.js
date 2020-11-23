@@ -6,12 +6,12 @@ const {
   faceDetectionOptions,
 } = require('./utils');
 
-const getBufferResizedImg = (crop, originalBuffer, optionsResize) => {
+const getBufferResizedImg = (crop, originalBuffer, optionsResize, format = 'jpg') => {
   return new Promise((resolve, reject) => gm(originalBuffer)
     .crop(crop.width, crop.height, crop.x, crop.y)
     .resize(optionsResize.width, optionsResize.height)
-    .setFormat('jpg')
-    .toBuffer((err, buffer) => err ? reject(err) : resolve(buffer)))
+    .setFormat(format)
+    .toBuffer((err, buffer) => err ? reject(err) : resolve(buffer)));
 };
 
 const faceDetect = async (Buffer) => {

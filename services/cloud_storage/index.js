@@ -15,11 +15,12 @@ class CloudStorageClient {
     });
   }
 
-  uploadFile(Key, Body) {
+  uploadFile(Key, Body, ContentType) {
     const params = {
       Bucket: this.bucket,
       Key: Key.replace('LARGESIZE', 'SMALLSIZE'),
       Body,
+      ContentType,
     };
     return this.S3.upload(params).promise();
   }
