@@ -49,6 +49,7 @@ class SmartCrop {
     log('**** Image updated ****');
     benchmark.stop();
     benchmarkFull.stop('⏰ ⏰ ⏰ Total exectution time');
+    return { success: true };
   }
 }
 
